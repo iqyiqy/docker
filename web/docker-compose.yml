@@ -10,7 +10,7 @@ services:
       - 443:443
     volumes:
       - ./nginx:/etc/nginx/conf.d/
-      - /home/wwwroot/down:/var/www/html
+      - ./html/var/www/html
     restart: always
     hostname: nginx.docker
 
@@ -19,7 +19,7 @@ services:
     #image: php:7.2.0-fpm
     container_name: php
     volumes:
-      - /home/wwwroot/down:/var/www/html
+      - ./html:/var/www/html
       - ./php/php.ini:/usr/local/etc/php/php.ini
     restart: always
     hostname: php.docker
