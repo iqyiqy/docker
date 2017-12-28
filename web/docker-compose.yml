@@ -3,22 +3,23 @@ services:
   nginx:
     image: nginx:1.12.2
     container_name: nginx
-    depends_on: 
+    depends_on:
       - php
     ports:
-      - 8080:80
+      - 80:80
+      - 443:443
     volumes:
-      - ./nginx/my.conf:/etc/nginx/conf.d/my.conf
-      - ./html:/var/www/html
+      - ./nginx:/etc/nginx/conf.d/
+      - /home/wwwroot/down:/var/www/html
     restart: always
     hostname: nginx.docker
 
   php:
-    image: byeyouth/php：7.2
+    image: byeyouth/php:7.2
     #image: php:7.2.0-fpm
     container_name: php
     volumes:
-      - ./html:/var/www/html
+      - /home/wwwroot/down:/var/www/html
       - ./php/php.ini:/usr/local/etc/php/php.ini
     restart: always
     hostname: php.docker
