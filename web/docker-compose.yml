@@ -14,7 +14,7 @@ services:
     hostname: nginx.docker
 
   php:
-    image: byeyouth/php7.2
+    image: byeyouth/php：7.2
     #image: php:7.2.0-fpm
     container_name: php
     volumes:
