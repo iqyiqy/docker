@@ -21,5 +21,6 @@ services:
     volumes:
       - ./html:/var/www/html
       - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./php/zz.conf:/usr/local/etc/php-fpm.d/zz.conf
     restart: always
     hostname: php.docker
