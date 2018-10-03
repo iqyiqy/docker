@@ -19,12 +19,12 @@ services:
       - CRON_PERIOD=15m
       - TZ=Europe/Berlin
       - ADMIN_USER=admin            # Don't set to configure through browser
-      - ADMIN_PASSWORD=hua19900604        # Don't set to configure through browser
+      - ADMIN_PASSWORD=123456        # Don't set to configure through browser
       - DOMAIN=localhost
       - DB_TYPE=mysql
       - DB_NAME=nextcloud
       - DB_USER=nextcloud
-      - DB_PASSWORD=hua19900604
+      - DB_PASSWORD=123456
       - DB_HOST=nextcloud-db
     volumes:
       - ./nextcloud/data:/data
@@ -38,7 +38,7 @@ services:
     volumes:
       - ./nextcloud/db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=hua19900604
+      - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
-      - MYSQL_PASSWORD=hua19900604
+      - MYSQL_PASSWORD=123456
