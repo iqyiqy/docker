@@ -31,10 +31,10 @@ RUN php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.ph
     php -r "unlink('composer-setup.php');" && \
     composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ && \
 
-    # Redis Mongo imagick mcrypt memcached
-    pecl install redis mongodb swoole imagick mcrypt memcached && \
+    # Redis Mongo imagick
+    pecl install redis mongodb swoole imagick && \
     rm -rf /tmp/pear && \
-    docker-php-ext-enable redis mongodb swoole imagick mcrypt memcached && \
+    docker-php-ext-enable redis mongodb swoole imagick && \
      
     # GD 扩展
     docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ && \
